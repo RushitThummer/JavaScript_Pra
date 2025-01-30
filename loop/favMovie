@@ -1,0 +1,9 @@
+//program for find your favurate movie untill you can not find right movie
+const favMovie="kasumbo";
+let guess=prompt("guess my favotite movie");
+while((guess!=favMovie)&&(guess!="quit")){
+    guess=prompt("wrong guess. please try again");
+}
+if(guess==favMovie){
+    console.log("congrates! You guess is right")
+}
