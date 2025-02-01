@@ -1,0 +1,23 @@
+//Guessing game
+//User enter the max nuber & then tries to guess a generate random numbrer between 1 to max.
+
+const max=prompt("ente the max number");
+
+const random=Math.floor(Math.random()*max)+1;
+
+let guess=prompt("guess the number");
+
+while(true){
+    if(guess=="quit"){
+        console.log(" user quit game");
+        break;
+    }
+    if(guess==random){
+        console.log("you guess right!congrats!!! random number was",random);
+        break;
+    }else if(guess<random){
+        guess=prompt(" hint:your guess small number!please try again");
+    }else{
+        guess=prompt(" hint:your guess large number!please try again");
+    }
+}
