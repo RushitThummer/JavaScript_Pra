@@ -1,0 +1,44 @@
+/* create a program that click button change div color randomly*/
+?------------------<html>----------------------
+  <body>
+    <h3>genrate a  random color</h3>
+    <br>
+    <button>genrate color</button>
+    <br>
+    <br>
+    <div>this is your new color</div>
+
+    <script src="app.js"></script>
+  </body>
+---------------?#css----------------------------
+  div{
+  height: 100px;
+  width:500px;
+  border: 1px solid black;
+  margin: auto;
+}
+body{
+  text-align: center;
+}
+  
+?--------------------.JS----------------------------
+  let btn=document.querySelector("button");
+
+btn.addEventListener("click",function(){
+    let randamColor=getRandomValue();
+
+    let h3=document.querySelector("h3");
+    h3.innerText=randamColor;
+    console.log("color updated");
+
+    let div=document.querySelector("div");
+    div.style.backgroundColor=randamColor;
+});
+
+function getRandomValue(){
+    let red =Math.floor(Math.random() * 255);//give value btw 0-255
+    let green =Math.floor(Math.random() * 255);
+    let blue =Math.floor(Math.random() * 255);
+    let color=`rgb(${red},${green},${blue})`;
+    return color;
+}
