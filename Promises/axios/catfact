@@ -1,0 +1,31 @@
+//we can make button function to display info using catfact url
+-----------------<index.html>----------------------------------
+  <body>
+   <h1>CAT FACT</h1>
+   <button>know fact about cat</button>
+   <p>info....</p>
+   <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+   <script src="app.js"></script>
+  </body>
+------------------app.js---------------------------------------
+  let btn=document.querySelector("button");
+
+btn.addEventListener("click",async()=>{
+    let fact=await getFact();
+    console.log(fact);
+    let p=document.querySelector("p");
+    p.innerText=fact;
+
+});
+let url='https://catfact.ninja/fact';
+
+async function getFact(){
+    try{
+        let res=await axios(url);
+        return res.data.fact;
+    }
+    catch(e){
+        console.log("erroe-"+e);
+        return error_found;
+    }
+}
